@@ -3,149 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMI | Premium Gaming Gear</title>
+    <title>LUMI | Premium Tech Aesthetics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --p: #9d4edd; --bg: #030305; --c: rgba(255, 255, 255, 0.03); --border: rgba(255,255,255,0.08); }
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { background: var(--bg); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
-        
-        /* Navigation */
-        nav { position: fixed; top: 0; width: 100%; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; background: rgba(3,3,5,0.8); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 1px solid var(--border); }
-        .logo { font-weight: 900; letter-spacing: 5px; color: var(--p); text-decoration: none; font-size: 1.5rem; }
-        .nav-links a { color: #fff; text-decoration: none; margin-left: 30px; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; opacity: 0.7; }
-        .nav-links a:hover { color: var(--p); opacity: 1; }
-
-        /* Sections */
-        section { min-height: 100vh; padding: 120px 10% 80px; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid rgba(255,255,255,0.02); }
-        
-        /* Hero Section */
-        #home { text-align: center; background: radial-gradient(circle at 20% 30%, #1a0033 0%, transparent 50%); }
-        .hero-h1 { font-size: clamp(3.5rem, 12vw, 7rem); letter-spacing: 25px; text-transform: uppercase; margin-bottom: 10px; background: linear-gradient(to bottom, #fff, #444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-p { color: #555; letter-spacing: 8px; margin-bottom: 40px; font-weight: 300; }
-
-        /* Collection Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .card { background: var(--c); border: 1px solid var(--border); border-radius: 24px; padding: 40px; text-align: center; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
-        .card:hover { border-color: var(--p); transform: translateY(-10px); background: rgba(157,78,221,0.05); }
-        .card h3 { letter-spacing: 4px; margin: 20px 0 5px; text-transform: uppercase; }
-        .card p { color: #666; font-size: 0.9rem; margin-bottom: 15px; }
-        .price { color: var(--p); font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; }
-
-        /* Story/About Box */
-        .story-box { background: var(--c); border: 1px solid var(--border); border-radius: 40px; padding: 60px; backdrop-filter: blur(20px); max-width: 900px; margin: 0 auto; }
-        .highlight { color: var(--p); font-weight: bold; }
-        .nexus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 50px; }
-        .mini-card { background: rgba(255,255,255,0.02); padding: 30px; border-radius: 20px; border: 1px solid var(--border); text-align: center; }
-        .mini-card strong { display: block; color: var(--p); font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 10px; }
-
-        /* FAQ/Care */
-        .faq-item { background: var(--c); border: 1px solid var(--border); border-radius: 15px; margin-bottom: 15px; cursor: pointer; transition: 0.3s; }
-        .faq-q { padding: 25px; display: flex; justify-content: space-between; font-weight: bold; letter-spacing: 1px; }
-        .faq-a { padding: 0 25px 25px; color: #888; display: none; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
-        .active .faq-a { display: block; }
-        .active { border-color: var(--p); }
-
-        /* Buttons */
-        .btn { display: inline-block; padding: 18px 45px; background: #fff; color: #000; text-decoration: none; border-radius: 50px; font-weight: 900; text-transform: uppercase; letter-spacing: 3px; transition: 0.3s; border: none; cursor: pointer; font-size: 0.8rem; }
-        .btn:hover { background: var(--p); color: #fff; box-shadow: 0 0 40px var(--p); transform: scale(1.05); }
-
-        h2 { font-size: 2.5rem; letter-spacing: 15px; text-transform: uppercase; margin-bottom: 60px; text-align: center; background: linear-gradient(to right, #fff, #666); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #000; color: white; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-text { color: #a855f7; text-shadow: 0 0 15px rgba(168, 85, 247, 0.5); }
+        .product-card { background: linear-gradient(145deg, #0f0f0f, #050505); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .product-card:hover { border-color: #a855f7; transform: translateY(-10px); box-shadow: 0 20px 40px rgba(168, 85, 247, 0.1); }
+        .cart-dot { animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#home" class="logo">LUMI</a>
-        <div class="nav-links">
-            <a href="#collection">Gear</a>
-            <a href="#about">Story</a>
-            <a href="#care">Support</a>
+    <nav class="fixed w-full z-50 glass py-5 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-tighter flex items-center gap-2">
+            <div class="w-8 h-8 bg-purple-600 rounded-full blur-[10px] absolute opacity-50"></div>
+            <span class="relative">LUMI</span>
+        </div>
+        <div class="hidden md:flex space-x-10 text-[10px] uppercase tracking-[0.3em] font-light">
+            <a href="#products" class="hover:text-purple-400 transition">Devices</a>
+            <a href="#about" class="hover:text-purple-400 transition">About</a>
+            <a href="#support" class="hover:text-purple-400 transition">Support</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="relative cursor-pointer" onclick="toggleCart()">
+                <span id="cart-count" class="absolute -top-2 -right-2 bg-purple-600 text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5z"/></svg>
+            </div>
         </div>
     </nav>
 
-    <section id="home">
-        <h1 class="hero-h1">LUMI</h1>
-        <p class="hero-p">ESTABLISHED IN THE VOID</p>
-        <div>
-            <a href="#collection" class="btn">Shop Gear</a>
+    <header class="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-600/20 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-[120px]"></div>
+        
+        <p class="text-purple-400 text-xs tracking-[0.5em] uppercase mb-4 font-bold">Evolution of Aesthetics</p>
+        <h2 class="text-7xl md:text-9xl font-bold mb-8 tracking-tighter leading-none">THE <span class="neon-text italic">LUMI</span> <br>STANDARD.</h2>
+        
+        <div class="glass p-2 rounded-full flex items-center gap-4 mb-8">
+            <input id="promo-input" type="text" placeholder="PROMO CODE" class="bg-transparent border-none outline-none text-xs px-4 w-32 uppercase tracking-widest">
+            <button onclick="applyDiscount()" class="bg-white text-black text-[10px] font-bold py-2 px-6 rounded-full hover:bg-purple-500 hover:text-white transition">APPLY</button>
         </div>
-    </section>
 
-    <section id="collection">
-        <h2>THE COLLECTION</h2>
-        <div class="grid">
-            <div class="card">
-                <div style="font-size: 3.5rem;">⌨️</div>
-                <h3>EMBER 60</h3>
-                <p>Mechanical / Hall Effect Switches</p>
-                <p class="price">₹8,499</p>
-                <button class="btn" style="margin-top:20px; width:100%" onclick="alert('Proceeding to Secure Checkout...')">Buy Now</button>
-            </div>
-            <div class="card">
-                <div style="font-size: 3.5rem;">🖱️</div>
-                <h3>AURA WIRELESS</h3>
-                <p>56g / 30K DPI Optical Sensor</p>
-                <p class="price">₹5,299</p>
-                <button class="btn" style="margin-top:20px; width:100%" onclick="alert('Proceeding to Secure Checkout...')">Buy Now</button>
-            </div>
-            <div class="card">
-                <div style="font-size: 3.5rem;">🖥️</div>
-                <h3>VISION PRO</h3>
-                <p>27" OLED / 240Hz / 0.03ms</p>
-                <p class="price">₹19,999</p>
-                <button class="btn" style="margin-top:20px; width:100%" onclick="alert('Proceeding to Secure Checkout...')">Buy Now</button>
-            </div>
+        <div class="flex gap-6">
+            <a href="#products" class="bg-white text-black px-10 py-4 font-bold hover:scale-105 transition rounded-sm text-xs uppercase tracking-widest">Explore Shop</a>
         </div>
-    </section>
+    </header>
 
-    <section id="about">
-        <h2>OUR STORY</h2>
-        <div class="story-box">
-            <p>Lumi started in a dimly lit room with a flickering monitor. Our founder spent <span class="highlight">fifteen years</span> in the trenches of competitive gaming and digital engineering.</p>
-            <p style="margin-top:20px">We grew tired of the "corporate tax" on performance. The industry forgot about the gamer who wanted pro-grade gear without the overpriced hype. <strong>Lumi was born to bridge that gap.</strong></p>
-            
-            <div class="nexus-grid">
-                <div class="mini-card">
-                    <strong>NEXUS FACTORY</strong>
-                    Plot 82, Phase 8-B,<br>Sector 74, Mohali,<br>Punjab 160055
+    <section id="products" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div class="mb-16">
+            <h3 class="text-4xl font-bold tracking-tighter italic">COLLECTION_01</h3>
+            <div class="w-20 h-1 bg-purple-600 mt-4"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="product-card p-8 rounded-3xl group">
+                <div class="h-72 bg-zinc-900 rounded-2xl mb-8 overflow-hidden">
+                    <img id="img1" src="https://via.placeholder.com/400x400/1a1a1a/ffffff?text=LUMI-X" alt="Lumi-X" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
-                <div class="mini-card">
-                    <strong>CONTACT</strong>
-                    nexus@lumidevices.tech<br>+91 172 409 0012
-                </div>
-                <div class="mini-card">
-                    <strong>MISSION</strong>
-                    Raw Performance.<br>Direct Pricing.<br>No Fluff.
+                <h4 class="text-2xl font-bold mb-1 uppercase tracking-tight">LUMI-X Pad</h4>
+                <p class="text-gray-500 text-xs mb-6 font-light">Precision glass-fiber weave surface.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold" id="price1">$129.00</span>
+                    <button onclick="addToCart('LUMI-X Pad', 129)" class="bg-purple-600 p-3 rounded-full hover:bg-white hover:text-black transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
+                    </button>
                 </div>
             </div>
+
+            <div class="product-card p-8 rounded-3xl group">
+                <div class="h-72 bg-zinc-900 rounded-2xl mb-8 overflow-hidden text-center">
+                    <img id="img2" src="https://via.placeholder.com/400x400/1a1a1a/ffffff?text=CORE-1" alt="Core" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <h4 class="text-2xl font-bold mb-1 uppercase tracking-tight">CORE-1 DeskMat</h4>
+                <p class="text-gray-500 text-xs mb-6 font-light">Minimalist obsidian aesthetics.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold" id="price2">$59.00</span>
+                    <button onclick="addToCart('CORE-1 DeskMat', 59)" class="bg-purple-600 p-3 rounded-full hover:bg-white hover:text-black transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card p-8 rounded-3xl group">
+                <div class="h-72 bg-zinc-900 rounded-2xl mb-8 overflow-hidden">
+                    <img id="img3" src="https://via.placeholder.com/400x400/1a1a1a/ffffff?text=BEAM" alt="Beam" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <h4 class="text-2xl font-bold mb-1 uppercase tracking-tight">BEAM LightBar</h4>
+                <p class="text-gray-500 text-xs mb-6 font-light">Atmospheric monitor backlight.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold" id="price3">$89.00</span>
+                    <button onclick="addToCart('BEAM LightBar', 89)" class="bg-purple-600 p-3 rounded-full hover:bg-white hover:text-black transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="care">
-        <h2>LUMI CARE</h2>
-        <div style="max-width:800px; margin: 0 auto; width:100%">
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-q">WARRANTY POLICY <span>+</span></div>
-                <div class="faq-a">2-Year limited hardware warranty. We cover all manufacturing defects with "Nexus-Priority" replacement across India.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-q">PUNJAB DELIVERY <span>+</span></div>
-                <div class="faq-a">Orders within Chandigarh and Mohali are delivered via our Factory Express within 24 hours.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('active')">
-                <div class="faq-q">SOFTWARE & CUSTOMIZATION <span>+</span></div>
-                <div class="faq-a">Download the Lumi Command Center for Windows/macOS to sync RGB and remap macros.</div>
-            </div>
-            <div style="text-align:center; margin-top:50px">
-                <a href="mailto:support@lumidevices.tech" class="btn">Contact Support</a>
-            </div>
-        </div>
+    <section id="about" class="py-32 bg-zinc-950 text-center px-6">
+        <h3 class="text-xs uppercase tracking-[0.5em] text-purple-500 mb-6 font-bold">Why Lumi?</h3>
+        <p class="max-w-3xl mx-auto text-3xl md:text-5xl font-light leading-tight italic">
+            "We didn't just build peripherals. We built the <span class="font-bold border-b-2 border-purple-500 text-white not-italic">soul of your setup</span>."
+        </p>
     </section>
 
-    <footer style="padding: 60px; text-align: center; color: #444; font-size: 0.7rem; letter-spacing: 3px; border-top: 1px solid var(--border);">
-        DESIGNED IN CHANDIGARH | FABRICATED IN PUNJAB<br>
-        © 2026 LUMI DEVICES. ALL RIGHTS RESERVED.
+    <footer class="py-12 border-t border-white/5 text-center text-gray-700 text-[10px] uppercase tracking-[0.4em]">
+        &copy; 2026 LUMI SHOP • Built with Vercel • Verified Premium
     </footer>
 
+    <script>
+        let cart = 0;
+        let discountApplied = false;
+
+        function addToCart(name, price) {
+            cart++;
+            document.getElementById('cart-count').innerText = cart;
+            alert(name + " added to your LUMI set. Total items: " + cart);
+        }
+
+        function applyDiscount() {
+            const code = document.getElementById('promo-input').value.toUpperCase();
+            if(code === 'LUMI20' && !discountApplied) {
+                alert("20% DISCOUNT APPLIED!");
+                // Visual feedback
+                document.getElementById('price1').innerText = "$103.20";
+                document.getElementById('price2').innerText = "$47.20";
+                document.getElementById('price3').innerText = "$71.20";
+                discountApplied = true;
+            } else {
+                alert("Invalid or already used code.");
+            }
+        }
+    </script>
 </body>
 </html>
